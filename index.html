@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+  />
+  <title>Adrian AlphaMale Transformation</title>
+  <meta name="theme-color" content="#0b0d10" />
+  <link rel="stylesheet" href="assets/css/styles.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <div class="bg-base"></div>
+
+    <video
+      class="bg-video"
+      autoplay
+      muted
+      loop
+      playsinline
+      preload="auto"
+      aria-hidden="true"
+    >
+      <source
+        src="assets/media/backgrounds/when_women_stare_at_bodybuilders.mp4"
+        type="video/mp4"
+      />
+    </video>
+
+    <div class="bg-overlay"></div>
+
+    <main class="page">
+      <header class="topbar glass">
+        <div class="brand-block">
+          <p class="eyebrow">Discipline • Strength • Endurance</p>
+          <h1>Adrian AlphaMale Transformation</h1>
+          <p class="subtext">Private training dashboard</p>
+        </div>
+
+        <button id="themeToggle" class="icon-btn" type="button" aria-label="Toggle motion">
+          Motion: ON
+        </button>
+      </header>
+
+      <section class="hero glass">
+        <div class="hero-copy">
+          <p class="hero-date" id="todayDate">Loading date...</p>
+          <h2 id="todayWorkoutTitle">Today’s Workout</h2>
+          <p id="todayWorkoutSubtitle" class="hero-subtitle">
+            Friday • 1:00 PM • Ruck — Flats + Rhythm
+          </p>
+
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="workout.html">Start Workout</a>
+            <a class="btn btn-secondary" href="calendar.html">Open Calendar</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="stats-grid">
+        <article class="stat-card glass">
+          <p class="stat-label">Workouts This Week</p>
+          <p class="stat-value" id="statWorkouts">4</p>
+        </article>
+
+        <article class="stat-card glass">
+          <p class="stat-label">Current Streak</p>
+          <p class="stat-value" id="statStreak">6 days</p>
+        </article>
+
+        <article class="stat-card glass">
+          <p class="stat-label">Last Bodyweight</p>
+          <p class="stat-value" id="statWeight">269 lb</p>
+        </article>
+
+        <article class="stat-card glass">
+          <p class="stat-label">Weekly Volume</p>
+          <p class="stat-value" id="statVolume">18,450 lb</p>
+        </article>
+      </section>
+
+      <section class="section-header">
+        <h3>Quick Actions</h3>
+      </section>
+
+      <section class="quick-actions-grid">
+        <a class="action-card glass" href="workout.html">
+          <span class="action-title">Today’s Workout</span>
+          <span class="action-meta">Set logging + timers</span>
+        </a>
+
+        <a class="action-card glass" href="calendar.html">
+          <span class="action-title">Weekly Calendar</span>
+          <span class="action-meta">View your training week</span>
+        </a>
+
+        <a class="action-card glass" href="routes.html">
+          <span class="action-title">Routes</span>
+          <span class="action-meta">Rucks, hikes, and rides</span>
+        </a>
+
+        <a class="action-card glass" href="settings.html">
+          <span class="action-title">Settings</span>
+          <span class="action-meta">Voice, timers, install</span>
+        </a>
+      </section>
+
+      <section class="section-header">
+        <h3>This Week</h3>
+      </section>
+
+      <section class="calendar-preview">
+        <article class="day-card glass is-complete">
+          <p class="day-name">Mon</p>
+          <p class="day-workout">Ruck</p>
+          <p class="day-time">1:00 PM</p>
+        </article>
+
+        <article class="day-card glass is-complete">
+          <p class="day-name">Tue</p>
+          <p class="day-workout">Upper</p>
+          <p class="day-time">YMCA</p>
+        </article>
+
+        <article class="day-card glass is-complete">
+          <p class="day-name">Wed</p>
+          <p class="day-workout">Swim + Walk</p>
+          <p class="day-time">10:00 / 2:00</p>
+        </article>
+
+        <article class="day-card glass is-planned">
+          <p class="day-name">Thu</p>
+          <p class="day-workout">Lower</p>
+          <p class="day-time">YMCA</p>
+        </article>
+
+        <article class="day-card glass is-active">
+          <p class="day-name">Fri</p>
+          <p class="day-workout">Ruck</p>
+          <p class="day-time">1:00 PM</p>
+        </article>
+
+        <article class="day-card glass">
+          <p class="day-name">Sat</p>
+          <p class="day-workout">Recovery</p>
+          <p class="day-time">Choose</p>
+        </article>
+
+        <article class="day-card glass">
+          <p class="day-name">Sun</p>
+          <p class="day-workout">Cycling</p>
+          <p class="day-time">9:00 AM</p>
+        </article>
+      </section>
+
+      <section class="section-header">
+        <h3>Mission Focus</h3>
+      </section>
+
+      <section class="focus-card glass">
+        <div class="focus-copy">
+          <p class="focus-label">Current Mission</p>
+          <h3>Whitney 2026</h3>
+          <p>
+            Get leaner, stronger, and faster. Build a backpacker body with better
+            VO₂, stronger calves/ankles/core, and a 22–25 lb Whitney-ready pack.
+          </p>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="assets/js/app.js"></script>
+</body>
+</html>
