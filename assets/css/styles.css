@@ -1256,3 +1256,125 @@ select {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
+
+/* =========================
+   ROUTES PAGE REFINEMENTS
+========================= */
+
+/* Widen the Routes page only */
+.routes-shell .page {
+  width: min(100%, 860px);
+}
+
+/* Slightly stronger readability on supporting text */
+.routes-shell .subtext,
+.routes-shell .hero-date,
+.routes-shell .hero-subtitle,
+.routes-shell .routes-map-note,
+.routes-shell .route-card-type,
+.routes-shell .route-detail-sub,
+.routes-shell .calendar-detail-label,
+.routes-shell .detail-label,
+.routes-shell .chart-label-row,
+.routes-shell .calendar-notes-preview,
+.routes-shell .route-mini-pill,
+.routes-shell .calendar-meta-pill,
+.routes-shell .stat-label,
+.routes-shell .focus-label,
+.routes-shell .eyebrow {
+  color: #c2cfdd;
+}
+
+/* Make secondary body copy a little brighter */
+.routes-shell .calendar-detail-text,
+.routes-shell .routes-map-note,
+.routes-shell .calendar-notes-preview {
+  color: #e3ebf4;
+}
+
+/* Slightly stronger card opacity for readability over the mountain image */
+.routes-shell .glass,
+.routes-shell .route-card,
+.routes-shell .routes-map-shell,
+.routes-shell .route-detail-panel,
+.routes-shell .analyzer-shell,
+.routes-shell .chart-shell,
+.routes-shell .tracking-shell {
+  background: rgba(15, 19, 24, 0.88);
+}
+
+/* Give route library cards a touch more contrast */
+.routes-shell .route-card.selected {
+  background: rgba(17, 24, 32, 0.94);
+  border-color: rgba(79, 126, 166, 0.6);
+}
+
+/* Improve stat tile readability */
+.routes-shell .stat-value,
+.routes-shell .detail-value,
+.routes-shell .route-card-name,
+.routes-shell .route-detail-top h3,
+.routes-shell .hero h2 {
+  color: #f5f8fc;
+}
+
+/* Slightly taller map area */
+.routes-shell .map-placeholder {
+  min-height: 400px;
+}
+
+/* Enlarge chart area for future real data */
+.routes-shell .chart-stage {
+  min-height: 420px;
+}
+
+/* Give chart labels a bit more presence */
+.routes-shell .chart-label-row {
+  color: #d2dbe5;
+  font-size: 0.95rem;
+}
+
+/* Improve pills/buttons over bright backgrounds */
+.routes-shell .legend-pill,
+.routes-shell .chart-pill,
+.routes-shell .route-mini-pill,
+.routes-shell .calendar-meta-pill {
+  background: rgba(255, 255, 255, 0.07);
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Slightly stronger section spacing for the wider layout */
+.routes-shell .section-header {
+  margin-top: 24px;
+}
+
+/* Better desktop breathing room */
+@media (min-width: 700px) {
+  .routes-shell .page {
+    width: min(100%, 980px);
+  }
+
+  .routes-shell .routes-library {
+    gap: 16px;
+  }
+
+  .routes-shell .route-detail-grid,
+  .routes-shell .analyzer-summary-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+/* Larger desktop layout for charts/details */
+@media (min-width: 1000px) {
+  .routes-shell .page {
+    width: min(100%, 1080px);
+  }
+
+  .routes-shell .chart-stage {
+    min-height: 460px;
+  }
+
+  .routes-shell .map-placeholder {
+    min-height: 440px;
+  }
+}
