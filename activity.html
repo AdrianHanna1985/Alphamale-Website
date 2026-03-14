@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+  />
+  <title>Activity Detail | Adrian AlphaMale Transformation</title>
+  <meta name="theme-color" content="#10151c" />
+  <link rel="stylesheet" href="assets/css/styles.css" />
+</head>
+<body>
+  <div class="app-shell activity-shell">
+    <div class="bg-base activity-bg-base"></div>
+    <div class="bg-image activity-bg-image" aria-hidden="true"></div>
+    <div class="bg-overlay activity-bg-overlay"></div>
+
+    <main class="page">
+      <header class="topbar glass">
+        <div class="brand-block">
+          <p class="eyebrow">Activity Detail</p>
+          <h1 id="activityTitle">Whitney Benchmark Activity</h1>
+          <p class="subtext" id="activitySubtitle">
+            Imported route and performance analysis
+          </p>
+        </div>
+
+        <a class="icon-btn nav-link-btn" href="routes.html">Back</a>
+      </header>
+
+      <section class="hero glass">
+        <div class="hero-copy">
+          <p class="hero-date" id="activityDate">Loading date...</p>
+          <h2 id="activityHeroTitle">Route Performance Analysis</h2>
+          <p class="hero-subtitle" id="activityHeroSubtitle">
+            Analyze pace, elevation, heart rate, timing, and split performance.
+          </p>
+        </div>
+      </section>
+
+      <section class="activity-summary-grid">
+        <article class="stat-card glass">
+          <p class="stat-label">Distance</p>
+          <p class="stat-value" id="summaryDistance">10.80 mi</p>
+        </article>
+
+        <article class="stat-card glass">
+          <p class="stat-label">Moving Time</p>
+          <p class="stat-value" id="summaryMovingTime">6:20:51</p>
+        </article>
+
+        <article class="stat-card glass">
+          <p class="stat-label">Total Duration</p>
+          <p class="stat-value" id="summaryTotalDuration">9:18:33</p>
+        </article>
+
+        <article class="stat-card glass">
+          <p class="stat-label">Elevation Gain</p>
+          <p class="stat-value" id="summaryElevationGain">6,368 ft</p>
+        </article>
+      </section>
+
+      <section class="section-header">
+        <h3>Activity Metrics</h3>
+      </section>
+
+      <section class="glass activity-metrics-shell">
+        <div class="activity-metrics-grid">
+          <article class="detail-metric">
+            <p class="detail-label">Avg Pace</p>
+            <p class="detail-value" id="metricAvgPace">35:17 /mi</p>
+          </article>
+
+          <article class="detail-metric">
+            <p class="detail-label">Calories</p>
+            <p class="detail-value" id="metricCalories">4,952 kcal</p>
+          </article>
+
+          <article class="detail-metric">
+            <p class="detail-label">Avg Heart Rate</p>
+            <p class="detail-value" id="metricAvgHR">141 bpm</p>
+          </article>
+
+          <article class="detail-metric">
+            <p class="detail-label">Max Heart Rate</p>
+            <p class="detail-value" id="metricMaxHR">175 bpm</p>
+          </article>
+
+          <article class="detail-metric">
+            <p class="detail-label">Max Altitude</p>
+            <p class="detail-value" id="metricMaxAltitude">14,505 ft</p>
+          </article>
+
+          <article class="detail-metric">
+            <p class="detail-label">Min Altitude</p>
+            <p class="detail-value" id="metricMinAltitude">8,360 ft</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section-header">
+        <h3>Performance Chart</h3>
+      </section>
+
+      <section class="glass activity-chart-shell">
+        <div class="chart-legend">
+          <span class="chart-pill pace">Pace</span>
+          <span class="chart-pill elevation">Elevation</span>
+          <span class="chart-pill heart">Heart Rate</span>
+        </div>
+
+        <div class="chart-stage activity-chart-stage">
+          <div class="chart-grid-lines"></div>
+
+          <svg class="chart-svg" viewBox="0 0 1000 360" preserveAspectRatio="none" aria-hidden="true">
+            <polyline
+              id="paceLine"
+              fill="none"
+              stroke="#21a1ff"
+              stroke-width="5"
+              points=""
+            />
+            <polyline
+              id="elevationLine"
+              fill="none"
+              stroke="#d32f8b"
+              stroke-width="5"
+              points=""
+            />
+            <polyline
+              id="heartRateLine"
+              fill="none"
+              stroke="#e53b3b"
+              stroke-width="5"
+              points=""
+            />
+          </svg>
+        </div>
+
+        <div class="chart-label-row">
+          <span>Pace</span>
+          <span>Elevation</span>
+          <span>Heart Rate</span>
+        </div>
+
+        <p class="routes-map-note">
+          This chart now uses activity data arrays. Point-click stats can be added next.
+        </p>
+      </section>
+
+      <section class="section-header">
+        <h3>Split Tables</h3>
+      </section>
+
+      <section class="glass split-shell">
+        <div class="split-tabs">
+          <button class="split-tab active" data-split-target="split01">0.1 mi</button>
+          <button class="split-tab" data-split-target="split05">0.5 mi</button>
+          <button class="split-tab" data-split-target="split1">1 mi</button>
+          <button class="split-tab" data-split-target="split5">5 mi</button>
+        </div>
+
+        <div class="split-table-wrap active" id="split01">
+          <table class="split-table">
+            <thead>
+              <tr>
+                <th>Split</th>
+                <th>Pace</th>
+                <th>Elev Gain</th>
+                <th>Avg HR</th>
+              </tr>
+            </thead>
+            <tbody id="split01Body"></tbody>
+          </table>
+        </div>
+
+        <div class="split-table-wrap" id="split05">
+          <table class="split-table">
+            <thead>
+              <tr>
+                <th>Split</th>
+                <th>Pace</th>
+                <th>Elev Gain</th>
+                <th>Avg HR</th>
+              </tr>
+            </thead>
+            <tbody id="split05Body"></tbody>
+          </table>
+        </div>
+
+        <div class="split-table-wrap" id="split1">
+          <table class="split-table">
+            <thead>
+              <tr>
+                <th>Split</th>
+                <th>Pace</th>
+                <th>Elev Gain</th>
+                <th>Avg HR</th>
+              </tr>
+            </thead>
+            <tbody id="split1Body"></tbody>
+          </table>
+        </div>
+
+        <div class="split-table-wrap" id="split5">
+          <table class="split-table">
+            <thead>
+              <tr>
+                <th>Split</th>
+                <th>Pace</th>
+                <th>Elev Gain</th>
+                <th>Avg HR</th>
+              </tr>
+            </thead>
+            <tbody id="split5Body"></tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="section-header">
+        <h3>Pause Tracking</h3>
+      </section>
+
+      <section class="glass pause-shell">
+        <div class="pause-grid">
+          <article class="calendar-detail-block">
+            <p class="calendar-detail-label">Pause Start</p>
+            <p class="calendar-detail-text" id="pauseStart">01:14:22</p>
+          </article>
+
+          <article class="calendar-detail-block">
+            <p class="calendar-detail-label">Pause End</p>
+            <p class="calendar-detail-text" id="pauseEnd">01:17:03</p>
+          </article>
+
+          <article class="calendar-detail-block">
+            <p class="calendar-detail-label">Pause Duration</p>
+            <p class="calendar-detail-text" id="pauseDuration">2m 41s</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section-header">
+        <h3>Point Stats (Next Step Ready)</h3>
+      </section>
+
+      <section class="glass point-stats-shell">
+        <div class="point-stats-grid">
+          <article class="detail-metric">
+            <p class="detail-label">Coordinates</p>
+            <p class="detail-value" id="pointCoords">—</p>
+          </article>
+
+          <article class="detail-metric">
+            <p class="detail-label">Altitude</p>
+            <p class="detail-value" id="pointAltitude">—</p>
+          </article>
+
+          <article class="detail-metric">
+            <p class="detail-label">Grade %</p>
+            <p class="detail-value" id="pointGrade">—</p>
+          </article>
+
+          <article class="detail-metric">
+            <p class="detail-label">Heart Rate</p>
+            <p class="detail-value" id="pointHeartRate">—</p>
+          </article>
+        </div>
+
+        <p class="routes-map-note">
+          Version 2 foundation is ready. The next enhancement can connect chart/map clicks to detailed point stats.
+        </p>
+      </section>
+    </main>
+  </div>
+
+  <script src="assets/js/activity.js"></script>
+</body>
+</html>
