@@ -6,158 +6,172 @@
     name="viewport"
     content="width=device-width, initial-scale=1.0, viewport-fit=cover"
   />
-  <title>Workout Logger | Adrian AlphaMale Transformation</title>
-  <meta name="theme-color" content="#0d1218" />
+  <title>Adrian AlphaMale Transformation</title>
+  <meta name="theme-color" content="#0b0d10" />
   <link rel="stylesheet" href="assets/css/styles.css" />
 </head>
 <body>
-  <div class="app-shell workout-shell">
-    <div class="bg-base workout-bg-base"></div>
-    <div class="bg-image workout-bg-image" aria-hidden="true"></div>
-    <div class="bg-overlay workout-bg-overlay"></div>
+  <div class="app-shell">
+    <div class="bg-base"></div>
+
+    <video
+      class="bg-video"
+      autoplay
+      muted
+      loop
+      playsinline
+      preload="auto"
+      aria-hidden="true"
+    >
+      <source
+        src="assets/media/backgrounds/when_women_stare_at_bodybuilders.mp4"
+        type="video/mp4"
+      />
+    </video>
+
+    <div class="bg-overlay"></div>
 
     <main class="page">
       <header class="topbar glass">
         <div class="brand-block">
-          <p class="eyebrow">Workout Logger</p>
-          <h1>Thursday Upper</h1>
-          <p class="subtext">YMCA • Set-by-set logging • Big-button input</p>
+          <p class="eyebrow">Discipline • Strength • Endurance</p>
+          <h1>Adrian AlphaMale Transformation</h1>
+          <p class="subtext">Private training dashboard</p>
         </div>
 
-        <a class="icon-btn nav-link-btn" href="index.html">Back</a>
+        <button id="themeToggle" class="icon-btn" type="button" aria-label="Toggle motion">
+          Motion: ON
+        </button>
       </header>
 
       <section class="hero glass">
         <div class="hero-copy">
-          <p class="hero-date" id="loggerDate">Loading date...</p>
-          <h2>Today’s Workout</h2>
-          <p class="hero-subtitle">
-            Upper body training • Machines + free weights • Timer-guided
+          <p class="hero-date" id="todayDate">Loading date...</p>
+          <h2 id="todayWorkoutTitle">Today’s Workout</h2>
+          <p id="todayWorkoutSubtitle" class="hero-subtitle">
+            Friday • 1:00 PM • Ruck — Flats + Rhythm
+          </p>
+
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="workout.html">Start Workout</a>
+            <a class="btn btn-secondary" href="calendar.html">Open Calendar</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="stats-grid">
+        <article class="stat-card glass">
+          <p class="stat-label">Workouts This Week</p>
+          <p class="stat-value" id="statWorkouts">4</p>
+        </article>
+
+        <article class="stat-card glass">
+          <p class="stat-label">Current Streak</p>
+          <p class="stat-value" id="statStreak">6 days</p>
+        </article>
+
+        <article class="stat-card glass">
+          <p class="stat-label">Last Bodyweight</p>
+          <p class="stat-value" id="statWeight">269 lb</p>
+        </article>
+
+        <article class="stat-card glass">
+          <p class="stat-label">Weekly Volume</p>
+          <p class="stat-value" id="statVolume">18,450 lb</p>
+        </article>
+      </section>
+
+      <section class="section-header">
+        <h3>Quick Actions</h3>
+      </section>
+
+      <section class="quick-actions-grid">
+        <a class="action-card glass" href="workout.html">
+          <span class="action-title">Today’s Workout</span>
+          <span class="action-meta">Set logging + timers</span>
+        </a>
+
+        <a class="action-card glass" href="calendar.html">
+          <span class="action-title">Weekly Calendar</span>
+          <span class="action-meta">View your training week</span>
+        </a>
+
+        <a class="action-card glass" href="routes.html">
+          <span class="action-title">Routes</span>
+          <span class="action-meta">Rucks, hikes, and rides</span>
+        </a>
+
+        <a class="action-card glass" href="settings.html">
+          <span class="action-title">Settings</span>
+          <span class="action-meta">Voice, timers, install</span>
+        </a>
+      </section>
+
+      <section class="section-header">
+        <h3>This Week</h3>
+      </section>
+
+      <section class="calendar-preview">
+        <article class="day-card glass is-complete">
+          <p class="day-name">Mon</p>
+          <p class="day-workout">Ruck</p>
+          <p class="day-time">1:00 PM</p>
+        </article>
+
+        <article class="day-card glass is-complete">
+          <p class="day-name">Tue</p>
+          <p class="day-workout">Upper</p>
+          <p class="day-time">YMCA</p>
+        </article>
+
+        <article class="day-card glass is-complete">
+          <p class="day-name">Wed</p>
+          <p class="day-workout">Swim + Walk</p>
+          <p class="day-time">10:00 / 2:00</p>
+        </article>
+
+        <article class="day-card glass is-planned">
+          <p class="day-name">Thu</p>
+          <p class="day-workout">Upper</p>
+          <p class="day-time">YMCA</p>
+        </article>
+
+        <article class="day-card glass is-active">
+          <p class="day-name">Fri</p>
+          <p class="day-workout">Ruck</p>
+          <p class="day-time">1:00 PM</p>
+        </article>
+
+        <article class="day-card glass">
+          <p class="day-name">Sat</p>
+          <p class="day-workout">Recovery</p>
+          <p class="day-time">Choose</p>
+        </article>
+
+        <article class="day-card glass">
+          <p class="day-name">Sun</p>
+          <p class="day-workout">Cycling</p>
+          <p class="day-time">9:00 AM</p>
+        </article>
+      </section>
+
+      <section class="section-header">
+        <h3>Mission Focus</h3>
+      </section>
+
+      <section class="focus-card glass">
+        <div class="focus-copy">
+          <p class="focus-label">Current Mission</p>
+          <h3>Whitney 2026</h3>
+          <p>
+            Get leaner, stronger, and faster. Build a backpacker body with better
+            VO₂, stronger calves/ankles/core, and a 22–25 lb Whitney-ready pack.
           </p>
         </div>
-      </section>
-
-      <section class="logger-summary-grid">
-        <article class="stat-card glass">
-          <p class="stat-label">Exercises</p>
-          <p class="stat-value" id="exerciseCount">10</p>
-        </article>
-
-        <article class="stat-card glass">
-          <p class="stat-label">Sets Completed</p>
-          <p class="stat-value" id="setsCompleted">0</p>
-        </article>
-
-        <article class="stat-card glass">
-          <p class="stat-label">Workout Volume</p>
-          <p class="stat-value" id="totalVolume">0 lb</p>
-        </article>
-
-        <article class="stat-card glass">
-          <p class="stat-label">Rest Timer</p>
-          <p class="stat-value" id="restTimerDisplay">90s</p>
-        </article>
-      </section>
-
-      <section class="section-header">
-        <h3>Warm-Up</h3>
-      </section>
-
-      <section class="glass workout-block">
-        <div class="warmup-list">
-          <div class="warmup-row">
-            <span>Incline walk or bike</span>
-            <span>5–8 min</span>
-          </div>
-          <div class="warmup-row">
-            <span>Band pull-aparts / shoulder prep</span>
-            <span>2 × 12</span>
-          </div>
-          <div class="warmup-row">
-            <span>Light warm-up set on first lift</span>
-            <span>1–2 sets</span>
-          </div>
-        </div>
-
-        <div class="timer-controls">
-          <button class="btn btn-secondary" id="startWarmupTimer">Start 5-min Warm-Up</button>
-          <button class="btn btn-secondary" id="startRestTimer">Start 90s Rest</button>
-        </div>
-      </section>
-
-      <section class="section-header">
-        <h3>Exercises</h3>
-      </section>
-
-      <section id="exerciseList" class="exercise-list"></section>
-
-      <section class="section-header">
-        <h3>Post-Workout Notes</h3>
-      </section>
-
-      <section class="glass workout-block">
-        <label class="form-label" for="workoutNotes">Workout Notes</label>
-        <textarea
-          id="workoutNotes"
-          class="notes-box"
-          rows="5"
-          placeholder="Example: chest press felt lighter, shoulders tight, machine busy, good session..."
-        ></textarea>
-      </section>
-
-      <section class="section-header">
-        <h3>Symptoms</h3>
-      </section>
-
-      <section class="glass workout-block symptoms-block">
-        <div class="symptom-group">
-          <label class="form-label">Knee Pinch</label>
-          <div class="symptom-buttons" data-symptom="knee">
-            <button type="button">0</button>
-            <button type="button">1</button>
-            <button type="button">2</button>
-            <button type="button">3</button>
-            <button type="button">4</button>
-            <button type="button">5</button>
-          </div>
-        </div>
-
-        <div class="symptom-group">
-          <label class="form-label">Ankle Tightness</label>
-          <div class="symptom-buttons" data-symptom="ankle">
-            <button type="button">0</button>
-            <button type="button">1</button>
-            <button type="button">2</button>
-            <button type="button">3</button>
-            <button type="button">4</button>
-            <button type="button">5</button>
-          </div>
-        </div>
-
-        <div class="symptom-group">
-          <label class="form-label">Neck / Trap Tightness</label>
-          <div class="symptom-buttons" data-symptom="neck">
-            <button type="button">0</button>
-            <button type="button">1</button>
-            <button type="button">2</button>
-            <button type="button">3</button>
-            <button type="button">4</button>
-            <button type="button">5</button>
-          </div>
-        </div>
-      </section>
-
-      <section class="section-header">
-        <h3>Session Controls</h3>
-      </section>
-
-      <section class="session-actions">
-        <button class="btn btn-primary" id="saveWorkout">Save Workout</button>
-        <button class="btn btn-secondary" id="clearWorkout">Clear Session</button>
       </section>
     </main>
   </div>
 
-  <script src="assets/js/workout.js"></script>
+  <script src="assets/js/app.js"></script>
 </body>
 </html>
