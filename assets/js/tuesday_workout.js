@@ -95,17 +95,6 @@ function initHeaderDate() {
   if (loggerDate) loggerDate.textContent = formatToday();
 }
 
-function createStepper(value, type, exerciseIndex, setIndex) {
-  const wrapper = document.createElement("div");
-  wrapper.className = "stepper";
-  wrapper.innerHTML = `
-    <button type="button" data-action="decrease" data-type="${type}" data-exercise="${exerciseIndex}" data-set="${setIndex}">-</button>
-    <div class="stepper-value" id="${type}-value-${exerciseIndex}-${setIndex}">${value}</div>
-    <button type="button" data-action="increase" data-type="${type}" data-exercise="${exerciseIndex}" data-set="${setIndex}">+</button>
-  `;
-  return wrapper;
-}
-
 function renderExercises() {
   const exerciseList = document.getElementById("exerciseList");
   const exerciseCount = document.getElementById("exerciseCount");
@@ -236,7 +225,6 @@ function handleStepperClick(event) {
   if (!valueEl) return;
 
   let currentValue = Number(valueEl.textContent);
-
   const stepAmount = type === "weight" ? 5 : 1;
 
   if (action === "increase") {
@@ -263,7 +251,6 @@ function updateSetVolume(exerciseIndex, setIndex) {
   const volume = weight * reps;
 
   volumeEl.textContent = `Set Volume: ${volume.toLocaleString()} lb`;
-  return volume;
 }
 
 function updateExerciseTotal(exerciseIndex) {
@@ -283,8 +270,6 @@ function updateExerciseTotal(exerciseIndex) {
   if (exerciseTotalEl) {
     exerciseTotalEl.textContent = `Exercise Total: ${total.toLocaleString()} lb`;
   }
-
-  return total;
 }
 
 function updateWorkoutTotal() {
@@ -364,7 +349,7 @@ function attachSessionButtons() {
 
   if (saveWorkout) {
     saveWorkout.addEventListener("click", () => {
-      alert("Workout saved locally later. For now, this is your working logger prototype.");
+      alert("Tuesday workout saved locally later. For now, this is your working logger prototype.");
     });
   }
 
