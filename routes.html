@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+  />
+  <title>Routes | Adrian AlphaMale Transformation</title>
+  <meta name="theme-color" content="#111317" />
+  <link rel="stylesheet" href="assets/css/styles.css" />
+</head>
+<body>
+  <div class="app-shell routes-shell">
+    <div class="bg-base routes-bg-base"></div>
+    <div class="bg-image routes-bg-image" aria-hidden="true"></div>
+    <div class="bg-overlay routes-bg-overlay"></div>
+
+    <main class="page">
+      <header class="topbar glass">
+        <div class="brand-block">
+          <p class="eyebrow">Routes</p>
+          <h1>Mountain Mission Control</h1>
+          <p class="subtext">Rucks, hikes, walks, cycling, and benchmark routes</p>
+        </div>
+
+        <a class="icon-btn nav-link-btn" href="index.html">Back</a>
+      </header>
+
+      <section class="hero glass">
+        <div class="hero-copy">
+          <p class="hero-date" id="routesDate">Loading date...</p>
+          <h2>Route Explorer</h2>
+          <p class="hero-subtitle">
+            Explore your training routes, benchmark hikes, and future activity analysis.
+          </p>
+        </div>
+      </section>
+
+      <section class="routes-summary-grid">
+        <article class="stat-card glass">
+          <p class="stat-label">Tracked Routes</p>
+          <p class="stat-value" id="routeCount">6</p>
+        </article>
+
+        <article class="stat-card glass">
+          <p class="stat-label">Longest Route</p>
+          <p class="stat-value" id="longestRoute">20 mi</p>
+        </article>
+
+        <article class="stat-card glass">
+          <p class="stat-label">Highest Gain</p>
+          <p class="stat-value" id="highestGain">6,368 ft</p>
+        </article>
+
+        <article class="stat-card glass">
+          <p class="stat-label">Featured Route</p>
+          <p class="stat-value" id="featuredRoute">Whitney</p>
+        </article>
+      </section>
+
+      <section class="section-header">
+        <h3>Interactive Route Map</h3>
+      </section>
+
+      <section class="glass routes-map-shell">
+        <div class="map-stage">
+          <div class="map-placeholder">
+            <div class="map-overlay-grid"></div>
+
+            <div class="route-line route-line-green"></div>
+            <div class="route-line route-line-orange"></div>
+            <div class="route-line route-line-cyan"></div>
+            <div class="route-line route-line-yellow"></div>
+            <div class="route-line route-line-red"></div>
+            <div class="route-line route-line-purple"></div>
+
+            <div class="map-center-label">Interactive map will render here</div>
+          </div>
+        </div>
+
+        <div class="routes-legend">
+          <button class="legend-pill legend-green active" data-route="arroyo">Arroyo Verde</button>
+          <button class="legend-pill legend-orange" data-route="harmon">Harmon Canyon</button>
+          <button class="legend-pill legend-cyan" data-route="harbor">Harbor Route</button>
+          <button class="legend-pill legend-yellow" data-route="sulphur">Sulphur Mtn Ride</button>
+          <button class="legend-pill legend-red" data-route="whitney">Whitney Benchmark</button>
+          <button class="legend-pill legend-purple" data-route="whitney2021">Whitney 2021</button>
+        </div>
+
+        <p class="routes-map-note">
+          Version 1 uses a styled interactive shell. Real satellite route rendering with imported coordinates will be wired next.
+        </p>
+      </section>
+
+      <section class="section-header">
+        <h3>Route Library</h3>
+      </section>
+
+      <section class="routes-library" id="routesLibrary"></section>
+
+      <section class="section-header">
+        <h3>Selected Route Details</h3>
+      </section>
+
+      <section class="glass route-detail-panel" id="routeDetailPanel">
+        <div class="route-detail-top">
+          <div>
+            <p class="focus-label">Selected Route</p>
+            <h3 id="routeDetailName">Big Arroyo Verde Park Hike</h3>
+            <p class="route-detail-sub" id="routeDetailType">Hill-conditioning hike / ruck route</p>
+          </div>
+
+          <span class="status-badge planned" id="routeDetailStatus">Ready</span>
+        </div>
+
+        <div class="route-detail-grid">
+          <article class="detail-metric">
+            <p class="detail-label">Distance</p>
+            <p class="detail-value" id="routeDistance">6.3 mi</p>
+          </article>
+
+          <article class="detail-metric">
+            <p class="detail-label">Elevation Gain</p>
+            <p class="detail-value" id="routeElevation">—</p>
+          </article>
+
+          <article class="detail-metric">
+            <p class="detail-label">Pack Goal</p>
+            <p class="detail-value" id="routePack">20 lb start</p>
+          </article>
+
+          <article class="detail-metric">
+            <p class="detail-label">Primary Use</p>
+            <p class="detail-value" id="routeUse">Hill Builder</p>
+          </article>
+        </div>
+
+        <div class="route-detail-blocks">
+          <div class="calendar-detail-block">
+            <p class="calendar-detail-label">Training Purpose</p>
+            <p class="calendar-detail-text" id="routePurpose">
+              Use this route for hill exposure, short-to-moderate loaded efforts, and Whitney prep leg conditioning.
+            </p>
+          </div>
+
+          <div class="calendar-detail-block">
+            <p class="calendar-detail-label">Notes</p>
+            <p class="calendar-detail-text" id="routeNotes">
+              Start conservative. Use flatter stretches if knee pinch is triggered by bigger step height.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section-header">
+        <h3>Activity Analyzer</h3>
+      </section>
+
+      <section class="glass analyzer-shell">
+        <div class="analyzer-summary-grid">
+          <article class="detail-metric">
+            <p class="detail-label">Distance</p>
+            <p class="detail-value">—</p>
+          </article>
+
+          <article class="detail-metric">
+            <p class="detail-label">Moving Time</p>
+            <p class="detail-value">—</p>
+          </article>
+
+          <article class="detail-metric">
+            <p class="detail-label">Total Duration</p>
+            <p class="detail-value">—</p>
+          </article>
+
+          <article class="detail-metric">
+            <p class="detail-label">Elevation Gain</p>
+            <p class="detail-value">—</p>
+          </article>
+
+          <article class="detail-metric">
+            <p class="detail-label">Avg Pace</p>
+            <p class="detail-value">—</p>
+          </article>
+
+          <article class="detail-metric">
+            <p class="detail-label">Avg / Max HR</p>
+            <p class="detail-value">—</p>
+          </article>
+        </div>
+
+        <div class="analyzer-note-block">
+          <p class="calendar-detail-label">Planned Analyzer Features</p>
+          <p class="calendar-detail-text">
+            Imported activity files will populate distance, moving time, total duration, pauses, splits,
+            max/min altitude, elevation gain, calories, and HR statistics.
+          </p>
+        </div>
+      </section>
+
+      <section class="section-header">
+        <h3>Pace / Elevation / Heart Rate Chart</h3>
+      </section>
+
+      <section class="glass chart-shell">
+        <div class="chart-legend">
+          <span class="chart-pill pace">Pace</span>
+          <span class="chart-pill elevation">Elevation</span>
+          <span class="chart-pill heart">Heart Rate</span>
+        </div>
+
+        <div class="chart-stage">
+          <div class="chart-grid-lines"></div>
+
+          <svg class="chart-svg" viewBox="0 0 1000 360" preserveAspectRatio="none" aria-hidden="true">
+            <polyline
+              fill="none"
+              stroke="#21a1ff"
+              stroke-width="5"
+              points="20,120 80,40 130,210 190,95 250,135 320,110 390,250 450,90 520,300 590,70 650,150 710,220 780,65 850,50 930,42 980,58"
+            />
+            <polyline
+              fill="none"
+              stroke="#d32f8b"
+              stroke-width="5"
+              points="20,300 110,275 180,255 260,205 330,145 420,115 520,145 620,225 710,235 800,260 900,290 980,310"
+            />
+            <polyline
+              fill="none"
+              stroke="#e53b3b"
+              stroke-width="5"
+              points="20,260 90,205 180,165 250,120 340,92 430,115 530,145 620,132 710,102 790,130 880,150 980,165"
+            />
+          </svg>
+        </div>
+
+        <div class="chart-label-row">
+          <span>Pace</span>
+          <span>Elevation</span>
+          <span>Heart Rate</span>
+        </div>
+
+        <p class="routes-map-note">
+          This chart is the styled v1 layout. Imported route/activity data will later drive real time-series plotting.
+        </p>
+      </section>
+
+      <section class="section-header">
+        <h3>Tracking & Recording</h3>
+      </section>
+
+      <section class="glass tracking-shell">
+        <div class="tracking-grid">
+          <div class="calendar-detail-block">
+            <p class="calendar-detail-label">Planned Recording Fields</p>
+            <p class="calendar-detail-text">
+              Distance, moving time, total duration, pause tracking, elevation gain, max/min altitude,
+              avg pace, calories, avg/max HR, and split support for 0.1 / 0.5 / 1 / 5 mile increments.
+            </p>
+          </div>
+
+          <div class="calendar-detail-block">
+            <p class="calendar-detail-label">Planned Device / Import Strategy</p>
+            <p class="calendar-detail-text">
+              Route and activity import from exported files first. Live recorder and optional Garmin HR chest strap
+              integration can come in later phases after the analyzer is stable.
+            </p>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="assets/js/routes.js"></script>
+</body>
+</html>
