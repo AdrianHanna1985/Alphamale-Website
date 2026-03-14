@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+  />
+  <title>Weekly Calendar | Adrian AlphaMale Transformation</title>
+  <meta name="theme-color" content="#111317" />
+  <link rel="stylesheet" href="assets/css/styles.css" />
+</head>
+<body>
+  <div class="app-shell calendar-shell">
+    <div class="bg-base calendar-bg-base"></div>
+    <div class="bg-image calendar-bg-image" aria-hidden="true"></div>
+    <div class="bg-overlay calendar-bg-overlay"></div>
+
+    <main class="page">
+      <header class="topbar glass">
+        <div class="brand-block">
+          <p class="eyebrow">Weekly Calendar</p>
+          <h1>Mission Week</h1>
+          <p class="subtext">Your training command center for this week</p>
+        </div>
+
+        <a class="icon-btn nav-link-btn" href="index.html">Back</a>
+      </header>
+
+      <section class="hero glass">
+        <div class="hero-copy">
+          <p class="hero-date" id="calendarDate">Loading date...</p>
+          <h2>This Week</h2>
+          <p class="hero-subtitle">
+            Stay disciplined. Hit the right session on the right day.
+          </p>
+        </div>
+      </section>
+
+      <section class="calendar-summary-grid">
+        <article class="stat-card glass">
+          <p class="stat-label">Planned Sessions</p>
+          <p class="stat-value" id="plannedSessions">7</p>
+        </article>
+
+        <article class="stat-card glass">
+          <p class="stat-label">Completed</p>
+          <p class="stat-value" id="completedSessions">3</p>
+        </article>
+
+        <article class="stat-card glass">
+          <p class="stat-label">Current Streak</p>
+          <p class="stat-value" id="calendarStreak">6 days</p>
+        </article>
+
+        <article class="stat-card glass">
+          <p class="stat-label">Weekly Volume</p>
+          <p class="stat-value" id="calendarVolume">18,450 lb</p>
+        </article>
+      </section>
+
+      <section class="section-header">
+        <h3>Week Overview</h3>
+      </section>
+
+      <section class="calendar-week-list" id="calendarWeekList"></section>
+    </main>
+  </div>
+
+  <script src="assets/js/calendar.js"></script>
+</body>
+</html>
