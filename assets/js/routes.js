@@ -112,6 +112,10 @@ function renderRouteLibrary() {
         <button class="btn btn-secondary route-select-btn" type="button" data-route-id="${route.id}">
           View Details
         </button>
+
+        <a class="btn btn-primary" href="activity.html?route=${route.id}">
+          Open Activity
+        </a>
       </div>
     `;
 
@@ -119,6 +123,12 @@ function renderRouteLibrary() {
   });
 
   attachRouteSelection();
+}
+
+function updateRouteDetailLink(route) {
+  const link = document.getElementById("routeDetailOpenActivity");
+  if (!link) return;
+  link.href = `activity.html?route=${route.id}`;
 }
 
 function attachRouteSelection() {
@@ -176,6 +186,8 @@ function updateRouteDetail(route) {
   if (use) use.textContent = route.use;
   if (purpose) purpose.textContent = route.purpose;
   if (notes) notes.textContent = route.notes;
+
+  updateRouteDetailLink(route);
 }
 
 document.addEventListener("DOMContentLoaded", () => {
